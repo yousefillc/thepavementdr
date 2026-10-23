@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADA Compliance Parking Lot Striping | The Pavement Doctor</title>
+  <meta name="description" content="Commercial ADA compliance parking lot striping, handicap stall layout, van-accessible stalls, and Title 24 compliance across Greater Los Angeles, Ventura County, and Orange County.">
+  <link rel="canonical" href="https://thepavementdr.com/ada-compliance.html">
+
+  <!-- Schema.org Structured Data for Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "ADA Compliance & Handicap Striping",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "The Pavement Doctor",
+      "url": "https://thepavementdr.com",
+      "email": "info@thepavementdr.com",
+      "areaServed": ["Greater Los Angeles", "Ventura County", "Orange County"]
+    },
+    "description": "Professional California Title 24 & ADA parking lot layout services including handicap stall painting, access aisles, crosshatching, signage installation, and truncated domes.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ADA Striping & Compliance Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ADA Handicap Stall Painting & Blue Line Striping"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Van Accessible Aisle Crosshatching"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "California Title 24 Signage & Truncated Domes"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-card: #1e1e1e;
+      --primary-yellow: #FFC72C;
+      --text-light: #f4f4f4;
+      --text-muted: #a0a0a0;
+      --border-color: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #0a0a0a;
+      border-bottom: 2px solid var(--primary-yellow);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-light);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--primary-yellow);
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-yellow);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, #0a0a0a 0%, var(--bg-dark) 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-yellow);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #d1d1d1;
+      margin-bottom: 2rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--primary-yellow);
+      color: #000;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: #e5b222;
+    }
+
+    /* Content Layout */
+    .content-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary-yellow);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .info-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .info-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary-yellow);
+      margin-bottom: 1rem;
+    }
+
+    .info-card p, .info-card ul {
+      color: #d1d1d1;
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+    }
+
+    .info-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Process Table */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 3rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: #0a0a0a;
+      color: var(--primary-yellow);
+      font-size: 1rem;
+    }
+
+    td {
+      color: #d1d1d1;
+      font-size: 0.95rem;
+    }
+
+    /* Local Coverage Links */
+    .links-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .links-grid a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .links-grid a:hover {
+      color: var(--primary-yellow);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a0a0a;
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h3 {
+      color: var(--primary-yellow);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary-yellow);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--primary-yellow);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">The Pavement <span>Doctor</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#areas">Service Areas</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1>ADA Compliance & Parking Lot Layout</h1>
+      <p>Ensure your commercial parking lot meets Federal ADA and California Title 24 standards to protect against costly lawsuits and maintain accessible parking for all patrons.</p>
+      <a href="index.html#contact" class="btn-cta">Schedule an ADA Compliance Review</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    
+    <h2 class="section-title">California ADA & Title 24 Requirements</h2>
+    <div class="grid-2">
+      <div class="info-card">
+        <h3>Protect Against ADA Lawsuits & Fines</h3>
+        <p>California is one of the most active states for parking lot accessibility litigation. Non-compliant stall dimensions, missing blue curb markings, fading paint, or incorrect ramp slopes can expose property managers to substantial penalties. Proper re-striping ensures strict adherence to current statutes.</p>
+      </div>
+      <div class="info-card">
+        <h3>California Title 24 Specific Standards</h3>
+        <p>In addition to federal regulations, California Title 24 mandates specific blue background box stenciling, white international wheelchair symbols, mandatory "NO PARKING" hatch lines in loading access aisles, and steel handicap signage posted at specific heights.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Core ADA Compliance Elements We Install</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Dimension / Spec</th>
+            <th>Implementation Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Standard Accessible Stall</strong></td>
+            <td>9 ft Wide Stall + 5 ft Access Aisle</td>
+            <td>Blue boundary line striping with bright white International Symbol of Accessibility (ISA) stencil.</td>
+          </tr>
+          <tr>
+            <td><strong>Van Accessible Stall</strong></td>
+            <td>9 ft Stall + 8 ft Access Aisle (or 11 ft + 5 ft)</td>
+            <td>Includes mandatory "VAN ACCESSIBLE" reflective steel signage and blue loading aisle hatch lines.</td>
+          </tr>
+          <tr>
+            <td><strong>Loading Access Aisles</strong></td>
+            <td>5 ft to 8 ft Width</td>
+            <td>Diagonal crosshatch paint with blue borders and "NO PARKING" stenciled in high-contrast lettering.</td>
+          </tr>
+          <tr>
+            <td><strong>Truncated Domes / Tactile Paving</strong></td>
+            <td>3 ft x 4 ft or Custom Ramp Fits</td>
+            <td>Yellow raised-dome warning tiles installed at curb ramps to provide tactile feedback for visually impaired pedestrians.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Related Services -->
+    <div class="links-box">
+      <h2 style="font-size: 1.3rem; color: var(--primary-yellow);">Explore Related Parking Lot Services</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Keep your entire asphalt surface maintained alongside compliance layout:</p>
+      <div class="links-grid">
+        <a href="parking-lot-striping.html">&rarr; Parking Lot Line Striping</a>
+        <a href="asphalt-sealcoating.html">&rarr; Asphalt Sealcoating</a>
+        <a href="asphalt-repair.html">&rarr; Pothole & Asphalt Repair</a>
+        <a href="thousand-oaks-asphalt-sealcoating.html">&rarr; Thousand Oaks Services</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>The Pavement Doctor</h3>
+        <p>Commercial & Industrial Asphalt Maintenance, Sealcoating, Line Striping, and ADA Compliance across Greater Los Angeles, Ventura County, and Orange County.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: info@thepavementdr.com</p>
+        <p>Coverage: LA, Ventura & Orange Counties</p>
+      </div>
+      <div class="footer-col">
+        <h3>Legal & Pages</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="asphalt-sealcoating.html">Asphalt Sealcoating</a>
+        <a href="parking-lot-striping.html">Parking Lot Striping</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Pavement Doctor. All Rights Reserved. | <a href="index.html">Return to Home</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
