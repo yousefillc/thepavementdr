@@ -1,847 +1,540 @@
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- FontAwesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Google Fonts (Inter) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Custom Styling & Tailwind Configuration -->
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    asphalt: {
-                        900: '#121212',
-                        800: '#1a1a1a',
-                        700: '#262626',
-                        600: '#333333',
-                        500: '#4a4a4a',
-                        300: '#8c8c8c',
-                        100: '#e5e5e5',
-                    },
-                    caution: {
-                        400: '#ffd026',
-                        500: '#ffc107',
-                        600: '#e0a800',
-                        700: '#c69500',
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pavement Doctor | Asphalt, Paving & Parking Lot Services in Southern California</title>
+    <meta name="description" content="Premier asphalt paving, sealcoating, line striping, and ADA compliance services across Los Angeles, Ventura County, and Orange County. Fast quotes for commercial and residential properties.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#121212',
+                            yellow: '#FFC72C',
+                            yellowDark: '#E0A800',
+                            grayDark: '#1E1E1E',
+                            grayLight: '#F4F4F5'
+                        }
                     }
-                },
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
                 }
             }
         }
-    }
-</script>
-
-<style>
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: #121212;
-        color: #ffffff;
-    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    /* Custom asphalt texture background simulation */
-    .bg-asphalt-pattern {
-        background-color: #1a1a1a;
-        background-image: radial-gradient(#2d2d2d 1px, transparent 0);
-        background-size: 24px 24px;
-    }
-
-    /* Caution Line Striping Gradient Border */
-    .caution-border {
-        border-image: repeating-linear-gradient(
-            45deg,
-            #ffc107,
-            #ffc107 10px,
-            #121212 10px,
-            #121212 20px
-        ) 20;
-    }
-
-    .stripe-bg {
-        background: repeating-linear-gradient(
-            -45deg,
-            rgba(255, 193, 7, 0.15),
-            rgba(255, 193, 7, 0.15) 15px,
-            transparent 15px,
-            transparent 30px
-        );
-    }
-</style>
-
-<!-- Schema.org JSON-LD for Search Engines & AI Search Crawlers -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Contractor",
-  "name": "The Pavement Doctor",
-  "alternateName": "The Pavement Dr",
-  "url": "https://thepavementdr.com",
-  "logo": "https://thepavementdr.com/images/logo.png",
-  "description": "Professional asphalt sealcoating, hot rubber crack filling, and ADA parking lot striping serving Greater Los Angeles Area, Ventura County, and Orange County.",
-  "email": "info@thepavementdr.com",
-  "knowsAbout": [
-    "Asphalt Sealcoating",
-    "Hot-Pour Crack Repair",
-    "Parking Lot Line Striping",
-    "ADA Compliance Stenciling",
-    "Pothole Patching"
-  ],
-  "areaServed": [
+    <!-- Structured Data / Schema.org for Local SEO -->
+    <script type="application/ld+json">
     {
-      "@type": "AdministrativeArea",
-      "name": "Los Angeles County",
-      "addressRegion": "CA"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Ventura County",
-      "addressRegion": "CA"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Orange County",
-      "addressRegion": "CA"
+      "@context": "https://schema.org",
+      "@type": "PavingContractor",
+      "name": "The Pavement Doctor",
+      "url": "https://thepavementdr.com",
+      "logo": "https://thepavementdr.com/images/logo.png",
+      "description": "Professional asphalt repair, sealcoating, line striping, and parking lot maintenance services throughout Southern California.",
+      "telephone": "+1-800-555-0199",
+      "areaServed": [
+        "Ventura County",
+        "Los Angeles County",
+        "Orange County"
+      ],
+      "priceRange": "$$"
     }
-  ]
-}
-</script>
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-yellow selection:text-brand-black">
 
-
-<!-- Header / Navigation -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-asphalt-900/90 backdrop-blur-md border-b border-asphalt-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            
-            <!-- Logo -->
-            <a href="#home" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-caution-500 rounded-lg flex items-center justify-center text-asphalt-900 font-extrabold text-xl shadow-lg shadow-caution-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-road"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-black tracking-wider text-white uppercase block leading-none">THE PAVEMENT <span class="text-caution-500">DOCTOR</span></span>
-                    <span class="text-xs text-asphalt-300 font-medium tracking-widest uppercase">Asphalt Maintenance & Striping</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm">
-                <a href="#home" class="text-white hover:text-caution-500 transition-colors">Home</a>
-                <a href="#services" class="text-asphalt-100 hover:text-caution-500 transition-colors">Services</a>
-                <a href="#local-services" class="text-asphalt-100 hover:text-caution-500 transition-colors">Local Pages</a>
-                <a href="#areas" class="text-asphalt-100 hover:text-caution-500 transition-colors">Service Areas</a>
-                <a href="#audience" class="text-asphalt-100 hover:text-caution-500 transition-colors">Commercial & HOAs</a>
-                <a href="#about" class="text-asphalt-100 hover:text-caution-500 transition-colors">About</a>
-            </nav>
-
-            <!-- Phone CTA & Quote Button -->
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="tel:18005557283" class="flex items-center text-sm font-bold text-white hover:text-caution-500 transition-colors">
-                    <i class="fa-solid fa-phone text-caution-500 mr-2"></i> (800) 555-PAVE
-                </a>
-                <a href="#quote" class="bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-extrabold text-sm px-5 py-2.5 rounded-lg shadow-md hover:shadow-caution-500/30 transition-all transform hover:-translate-y-0.5">
-                    Get Free Estimate
-                </a>
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-black text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid font-bold fa-phone text-brand-yellow mr-2"></i>(800) 555-0199</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-yellow mr-2"></i>Mon - Sat: 7:00 AM - 6:00 PM</span>
             </div>
-
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-asphalt-100 hover:text-white p-2 rounded-lg focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
+            <div>
+                <span class="text-brand-yellow font-medium"><i class="fa-solid fa-shield-halved mr-1"></i> Licensed, Bonded & Insured</span>
             </div>
         </div>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-asphalt-800 border-b border-asphalt-700 px-4 pt-2 pb-6 space-y-3">
-        <a href="#home" class="block py-2 text-white font-semibold">Home</a>
-        <a href="#services" class="block py-2 text-asphalt-100 font-semibold">Services</a>
-        <a href="#local-services" class="block py-2 text-asphalt-100 font-semibold">Local Service Pages</a>
-        <a href="#areas" class="block py-2 text-asphalt-100 font-semibold">Service Areas</a>
-        <a href="#audience" class="block py-2 text-asphalt-100 font-semibold">Commercial & HOAs</a>
-        <a href="#about" class="block py-2 text-asphalt-100 font-semibold">About Us</a>
-        <a href="tel:18005557283" class="block py-2 text-caution-500 font-bold"><i class="fa-solid fa-phone mr-2"></i> (800) 555-PAVE</a>
-        <a href="#quote" class="block w-full text-center bg-caution-500 text-asphalt-900 font-bold py-3 rounded-lg">Get Free Estimate</a>
-    </div>
-</header>
-
-<!-- Hero Section -->
-<section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-asphalt-900 overflow-hidden">
-    <!-- Background Overlay Graphic -->
-    <div class="absolute inset-0 z-0 opacity-20 stripe-bg pointer-events-none"></div>
-    <div class="absolute -right-20 -top-20 w-96 h-96 bg-caution-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-asphalt-800 border border-caution-500/40 px-3.5 py-1.5 rounded-full text-xs font-semibold text-caution-500 uppercase tracking-wide">
-                    <span class="w-2 h-2 rounded-full bg-caution-500 animate-pulse"></span>
-                    <span>Licensed California Contractor (CSLB)</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none uppercase">
-                    Preserve & Restore Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-caution-400 to-caution-600">Asphalt Surface</span>
-                </h1>
-
-                <p class="text-lg sm:text-xl text-asphalt-100 font-normal leading-relaxed max-w-2xl">
-                    Full-service asphalt sealcoating, hot rubberized crack filling, and CBC Title 24 ADA line striping across the <strong class="text-white">Greater Los Angeles Metro Area</strong> (Ventura, LA, & Orange Counties).
-                </p>
-
-                <!-- Feature Badges -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-semibold text-asphalt-100">
-                    <div class="flex items-center space-x-2 bg-asphalt-800/80 p-2.5 rounded-lg border border-asphalt-700">
-                        <i class="fa-solid fa-shield-halved text-caution-500 text-base"></i>
-                        <span>Commercial Grade Sealer</span>
-                    </div>
-                    <div class="flex items-center space-x-2 bg-asphalt-800/80 p-2.5 rounded-lg border border-asphalt-700">
-                        <i class="fa-solid fa-wheelchair text-caution-500 text-base"></i>
-                        <span>ADA Compliance Specialist</span>
-                    </div>
-                    <div class="flex items-center space-x-2 bg-asphalt-800/80 p-2.5 rounded-lg border border-asphalt-700 col-span-2 sm:col-span-1">
-                        <i class="fa-solid fa-fire text-caution-500 text-base"></i>
-                        <span>Hot-Pour Crack Sealing</span>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#quote" class="bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-black text-center text-lg px-8 py-4 rounded-xl shadow-xl shadow-caution-500/20 transition-all transform hover:-translate-y-1">
-                        Calculate Instant Estimate
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="bg-brand-black text-brand-yellow p-2.5 rounded-lg shadow">
+                            <i class="fa-solid fa-road fa-2x"></i>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-black tracking-wider block uppercase leading-none text-brand-black">THE PAVEMENT <span class="text-brand-yellowDark">DOCTOR</span></span>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-widest block">Asphalt & Line Striping Experts</span>
+                        </div>
                     </a>
-                    <a href="tel:18005557283" class="bg-asphalt-800 hover:bg-asphalt-700 border border-asphalt-600 text-white font-bold text-center text-lg px-8 py-4 rounded-xl transition-all flex items-center justify-center space-x-3">
-                        <i class="fa-solid fa-phone text-caution-500"></i>
-                        <span>Call (800) 555-PAVE</span>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-semibold text-slate-700">
+                    <a href="index.html" class="text-brand-black border-b-2 border-brand-yellow py-1">Home</a>
+                    <a href="#services" class="hover:text-brand-yellowDark transition-colors py-1">Services</a>
+                    <a href="#locations" class="hover:text-brand-yellowDark transition-colors py-1">Service Areas</a>
+                    <a href="#about" class="hover:text-brand-yellowDark transition-colors py-1">About Us</a>
+                    <a href="#contact" class="hover:text-brand-yellowDark transition-colors py-1">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="#quote" class="bg-brand-yellow text-brand-black hover:bg-brand-yellowDark font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Get Free Estimate</span>
                     </a>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <!-- Hero Graphic / Quick Stats Card -->
-            <div class="lg:col-span-5">
-                <div class="bg-asphalt-800 border-2 border-asphalt-700 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-                    <div class="absolute -top-3 right-6 bg-caution-500 text-asphalt-900 font-extrabold text-xs uppercase px-3 py-1 rounded-md shadow">
-                        Top Rated Greater LA Specialist
+    <!-- Hero Section -->
+    <section class="relative bg-brand-black text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#FFC72C_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-neutral-800 border border-neutral-700 rounded-full px-4 py-1.5 text-xs text-brand-yellow font-semibold">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Southern California's Premier Asphalt Specialists</span>
                     </div>
-                    
-                    <h3 class="text-xl font-extrabold text-white mb-6 uppercase border-b border-asphalt-700 pb-3">
-                        Why Property Managers Choose Us
-                    </h3>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Protect & Extend The Life Of Your <span class="text-brand-yellow underline decoration-brand-yellow decoration-4 underline-offset-8">Pavement</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl">
+                        From high-traffic commercial parking lots to municipal asphalt maintenance, we deliver long-lasting sealcoating, precision line striping, and structural asphalt repairs across LA, Ventura, and Orange County.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#quote" class="bg-brand-yellow text-brand-black hover:bg-brand-yellowDark font-extrabold text-center px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all text-lg">
+                            Request Free Inspection
+                        </a>
+                        <a href="#services" class="bg-neutral-800 text-white hover:bg-neutral-700 border border-neutral-700 font-bold text-center px-8 py-4 rounded-lg transition-all text-lg">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
 
-                    <div class="space-y-5">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-caution-500/10 flex items-center justify-center text-caution-500 text-xl font-bold shrink-0">
-                                <i class="fa-solid fa-square-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Doubles Asphalt Lifespan</h4>
-                                <p class="text-sm text-asphalt-300">Prevents UV oxidation and oil degradation before costly pavement replacement is needed.</p>
-                            </div>
+                <!-- Quote Form Sidebar -->
+                <div id="quote" class="lg:col-span-5 bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border-t-8 border-brand-yellow">
+                    <h2 class="text-2xl font-bold mb-2">Request A Quick Quote</h2>
+                    <p class="text-slate-600 text-sm mb-6">Get a fast, transparent estimate for your paving project.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-yellow focus:outline-none">
                         </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-caution-500/10 flex items-center justify-center text-caution-500 text-xl font-bold shrink-0">
-                                <i class="fa-solid fa-paint-roller"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Precision Striping & Stenciling</h4>
-                                <p class="text-sm text-asphalt-300">Crisp line work, fire lanes, directional arrows, and CBC Title 24 handicap stalls.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-caution-500/10 flex items-center justify-center text-caution-500 text-xl font-bold shrink-0">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Minimal Business Interruption</h4>
-                                <p class="text-sm text-asphalt-300">Weekend and phased night shifts so your retail or commercial tenants stay open.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-6 border-t border-asphalt-700 flex items-center justify-between text-xs text-asphalt-300">
-                        <span><i class="fa-solid fa-location-dot text-caution-500 mr-1"></i> Serving Greater LA Metro Area</span>
-                        <span class="font-bold text-white">100% Guaranteed Work</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Services Grid Section -->
-<section id="services" class="py-20 bg-asphalt-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-caution-500 font-extrabold text-sm uppercase tracking-widest block mb-2">Our Specialized Care</span>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">Full-Service Asphalt Maintenance</h2>
-            <div class="w-20 h-1.5 bg-caution-500 mx-auto mt-4 rounded-full"></div>
-            <p class="text-asphalt-300 mt-4 text-base">
-                From single driveway restoration to multi-acre commercial parking lots, we prescribe the exact fix your asphalt needs.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Service 1 -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-6 hover:border-caution-500/50 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
-                <div>
-                    <div class="w-14 h-14 bg-asphalt-800 border border-asphalt-700 rounded-xl flex items-center justify-center text-caution-500 text-2xl mb-6 group-hover:bg-caution-500 group-hover:text-asphalt-900 transition-colors">
-                        <i class="fa-solid fa-bucket"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Commercial Sealcoating</h3>
-                    <p class="text-asphalt-300 text-sm leading-relaxed mb-4">
-                        Squeegee and spray application using heavy-duty mineral-filled emulsion. Oils and petrol spot priming included to protect against fluid leaks and severe weather.
-                    </p>
-                </div>
-                <ul class="text-xs text-asphalt-300 space-y-2 border-t border-asphalt-800 pt-4 font-medium">
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Double-coat protection</li>
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Restores deep jet-black finish</li>
-                </ul>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-6 hover:border-caution-500/50 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
-                <div>
-                    <div class="w-14 h-14 bg-asphalt-800 border border-asphalt-700 rounded-xl flex items-center justify-center text-caution-500 text-2xl mb-6 group-hover:bg-caution-500 group-hover:text-asphalt-900 transition-colors">
-                        <i class="fa-solid fa-temperature-arrow-up"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Hot-Rubber Crack Filling</h3>
-                    <p class="text-asphalt-300 text-sm leading-relaxed mb-4">
-                        Direct-fire hot-pour rubber sealant injected at 375°F to fill open cracks. Prevents moisture intrusion into the subbase, stopping potholes before they form.
-                    </p>
-                </div>
-                <ul class="text-xs text-asphalt-300 space-y-2 border-t border-asphalt-800 pt-4 font-medium">
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Flexible hot-pour rubber</li>
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Stops sub-base erosion</li>
-                </ul>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-6 hover:border-caution-500/50 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
-                <div>
-                    <div class="w-14 h-14 bg-asphalt-800 border border-asphalt-700 rounded-xl flex items-center justify-center text-caution-500 text-2xl mb-6 group-hover:bg-caution-500 group-hover:text-asphalt-900 transition-colors">
-                        <i class="fa-solid fa-ruler-combined"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Line Striping & ADA Compliance</h3>
-                    <p class="text-asphalt-300 text-sm leading-relaxed mb-4">
-                        High-visibility layout restriping for parking stalls, red fire lanes, crosswalks, loading zones, and California Building Code (CBC) Title 24 handicap spaces.
-                    </p>
-                </div>
-                <ul class="text-xs text-asphalt-300 space-y-2 border-t border-asphalt-800 pt-4 font-medium">
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Title 24 & ADA compliant</li>
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Commercial traffic paint</li>
-                </ul>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-6 hover:border-caution-500/50 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
-                <div>
-                    <div class="w-14 h-14 bg-asphalt-800 border border-asphalt-700 rounded-xl flex items-center justify-center text-caution-500 text-2xl mb-6 group-hover:bg-caution-500 group-hover:text-asphalt-900 transition-colors">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Pothole Patching & Repair</h3>
-                    <p class="text-asphalt-300 text-sm leading-relaxed mb-4">
-                        Saw-cut excavation, base compaction, and hot-mix asphalt patching to eliminate slip-and-fall hazards and vehicle damage liabilities.
-                    </p>
-                </div>
-                <ul class="text-xs text-asphalt-300 space-y-2 border-t border-asphalt-800 pt-4 font-medium">
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Full depth asphalt repair</li>
-                    <li><i class="fa-solid fa-check text-caution-500 mr-2"></i>Compacted smooth finish</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- NEW SECTION: Dynamic City-Specific Service Pages -->
-<section id="local-services" class="py-20 bg-asphalt-900 border-t border-asphalt-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-caution-500 font-extrabold text-sm uppercase tracking-widest block mb-2">Local Service Pages</span>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">Select Your City & Service</h2>
-            <div class="w-20 h-1.5 bg-caution-500 mx-auto mt-4 rounded-full"></div>
-            <p class="text-asphalt-300 mt-4 text-base">
-                View tailored service information and local regulations for your municipality.
-            </p>
-        </div>
-
-        <!-- Interactive City & Service Selector -->
-        <div class="bg-asphalt-800 border border-asphalt-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto shadow-xl">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div>
-                    <label class="block text-xs font-bold text-caution-500 uppercase mb-2">Choose City:</label>
-                    <select id="local-city-select" onchange="renderLocalPage()" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-xl p-3 text-white text-sm focus:border-caution-500 focus:outline-none font-semibold">
-                        <option value="Thousand Oaks">Thousand Oaks</option>
-                        <option value="Oxnard">Oxnard</option>
-                        <option value="Ventura">Ventura</option>
-                        <option value="Simi Valley">Simi Valley</option>
-                        <option value="Los Angeles">Los Angeles</option>
-                        <option value="Pasadena">Pasadena</option>
-                        <option value="Long Beach">Long Beach</option>
-                        <option value="Santa Clarita">Santa Clarita</option>
-                        <option value="Irvine">Irvine</option>
-                        <option value="Anaheim">Anaheim</option>
-                        <option value="Newport Beach">Newport Beach</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-caution-500 uppercase mb-2">Choose Service:</label>
-                    <select id="local-service-select" onchange="renderLocalPage()" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-xl p-3 text-white text-sm focus:border-caution-500 focus:outline-none font-semibold">
-                        <option value="Sealcoating">Asphalt Sealcoating</option>
-                        <option value="Striping">Parking Lot Striping & ADA Compliance</option>
-                        <option value="Crack Filling">Hot Rubber Crack Repair</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Dynamic Page Container -->
-            <div id="local-content-box" class="bg-asphalt-900 border border-asphalt-700 rounded-xl p-6 sm:p-8">
-                <!-- JavaScript populates this content -->
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Regional Coverage Section -->
-<section id="areas" class="py-20 bg-asphalt-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-caution-500 font-extrabold text-sm uppercase tracking-widest block mb-2">Regional Coverage</span>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">Serving Greater Los Angeles Metro</h2>
-            <div class="w-20 h-1.5 bg-caution-500 mx-auto mt-4 rounded-full"></div>
-            <p class="text-asphalt-300 mt-4 text-base">
-                We deploy dedicated field crews across all three major Southern California counties.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Los Angeles County Card -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-8 relative overflow-hidden">
-                <div class="flex items-center space-x-4 mb-6">
-                    <div class="w-12 h-12 bg-caution-500/20 text-caution-500 rounded-xl flex items-center justify-center text-2xl font-black">
-                        LA
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Los Angeles County</h3>
-                        <p class="text-sm text-asphalt-300">Central Metro Operations</p>
-                    </div>
-                </div>
-
-                <p class="text-asphalt-100 text-sm mb-6 leading-relaxed">
-                    Commercial sealcoating, hot rubber crack filling, and city ADA compliance striping across LA Basin, San Fernando Valley, and South Bay.
-                </p>
-
-                <div class="border-t border-asphalt-700 pt-6">
-                    <h4 class="text-xs font-bold text-caution-500 uppercase tracking-wider mb-4">Key Cities Served:</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm font-semibold text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Los Angeles</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Pasadena</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Long Beach</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Glendale</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Santa Clarita</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Torrance</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ventura County Card -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-8 relative overflow-hidden">
-                <div class="flex items-center space-x-4 mb-6">
-                    <div class="w-12 h-12 bg-caution-500/20 text-caution-500 rounded-xl flex items-center justify-center text-2xl font-black">
-                        VC
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Ventura County</h3>
-                        <p class="text-sm text-asphalt-300">North SoCal Operations</p>
-                    </div>
-                </div>
-
-                <p class="text-asphalt-100 text-sm mb-6 leading-relaxed">
-                    Providing comprehensive parking lot maintenance, coastal UV sealcoating protection, and hot crack filling throughout Ventura County municipalities.
-                </p>
-
-                <div class="border-t border-asphalt-700 pt-6">
-                    <h4 class="text-xs font-bold text-caution-500 uppercase tracking-wider mb-4">Key Cities Served:</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm font-semibold text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Thousand Oaks</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Oxnard</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Camarillo</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Simi Valley</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Ventura</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Moorpark</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Orange County Card -->
-            <div class="bg-asphalt-900 border border-asphalt-700 rounded-2xl p-8 relative overflow-hidden">
-                <div class="flex items-center space-x-4 mb-6">
-                    <div class="w-12 h-12 bg-caution-500/20 text-caution-500 rounded-xl flex items-center justify-center text-2xl font-black">
-                        OC
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Orange County</h3>
-                        <p class="text-sm text-asphalt-300">South SoCal Operations</p>
-                    </div>
-                </div>
-
-                <p class="text-asphalt-100 text-sm mb-6 leading-relaxed">
-                    Delivering commercial line striping, shopping center sealcoating, and ADA Title 24 compliance upgrades across South Coast commercial corridors.
-                </p>
-
-                <div class="border-t border-asphalt-700 pt-6">
-                    <h4 class="text-xs font-bold text-caution-500 uppercase tracking-wider mb-4">Key Cities Served:</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm font-semibold text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Irvine</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Anaheim</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Newport Beach</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Huntington Beach</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Costa Mesa</div>
-                        <div class="flex items-center"><i class="fa-solid fa-location-dot text-caution-500 text-xs mr-2"></i> Mission Viejo</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Target Audience / Commercial Property Managers Section -->
-<section id="audience" class="py-20 bg-asphalt-900 border-y border-asphalt-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-5">
-                <span class="text-caution-500 font-extrabold text-sm uppercase tracking-widest block mb-2">Tailored Commercial Solutions</span>
-                <h2 class="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight leading-tight">
-                    Built for Commercial Properties & HOAs
-                </h2>
-                <p class="text-asphalt-300 mt-4 text-sm leading-relaxed">
-                    We understand the headaches property managers face with tenant access, safety liability, and local code enforcement. We make pavement upkeep seamless.
-                </p>
-
-                <div class="mt-6 space-y-4">
-                    <div class="bg-asphalt-800 border border-asphalt-700 p-4 rounded-xl">
-                        <h4 class="font-bold text-white text-base"><i class="fa-solid fa-building text-caution-500 mr-2"></i> Commercial Property Managers</h4>
-                        <p class="text-xs text-asphalt-300 mt-1">Prevent tenant downtime with clear phasing maps, weekend scheduling, and competitive multi-year maintenance packages.</p>
-                    </div>
-                    <div class="bg-asphalt-800 border border-asphalt-700 p-4 rounded-xl">
-                        <h4 class="font-bold text-white text-base"><i class="fa-solid fa-users text-caution-500 mr-2"></i> HOA & Residential Communities</h4>
-                        <p class="text-xs text-asphalt-300 mt-1">Keep community driveways and private roads looking immaculate while preserving association reserve funds.</p>
-                    </div>
-                    <div class="bg-asphalt-800 border border-asphalt-700 p-4 rounded-xl">
-                        <h4 class="font-bold text-white text-base"><i class="fa-solid fa-cart-shopping text-caution-500 mr-2"></i> Retail & Shopping Plazas</h4>
-                        <p class="text-xs text-asphalt-300 mt-1">Ensure complete ADA handicap compliance to protect your center from frivolous access litigation.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactive Estimate Calculator Form -->
-            <div id="quote" class="lg:col-span-7">
-                <div class="bg-asphalt-800 border-2 border-caution-500/50 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-                    <div class="mb-6">
-                        <span class="bg-caution-500 text-asphalt-900 font-extrabold text-xs uppercase px-3 py-1 rounded-md">
-                            Free Online Estimator
-                        </span>
-                        <h3 class="text-2xl font-black text-white uppercase mt-3">Request Your Free Assessment</h3>
-                        <p class="text-xs text-asphalt-300">Select your parameters below to generate an estimated budget for your project.</p>
-                    </div>
-
-                    <form id="calculator-form" onsubmit="event.preventDefault();" class="space-y-4">
-                        
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Target Region</label>
-                                <select id="calc-county" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                                    <option value="Los Angeles County">Los Angeles County</option>
-                                    <option value="Ventura County">Ventura County</option>
-                                    <option value="Orange County">Orange County</option>
-                                    <option value="Other SoCal Area">Other SoCal Area</option>
-                                </select>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone Number</label>
+                                <input type="tel" placeholder="(800) 000-0000" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-yellow focus:outline-none">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Primary Service Needed</label>
-                                <select id="calc-service" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                                    <option value="Sealcoating + Line Striping">Sealcoating + Line Striping</option>
-                                    <option value="Hot Rubber Crack Repair Only">Hot Rubber Crack Repair</option>
-                                    <option value="Line Striping & ADA Stenciling">Line Striping & ADA Stenciling</option>
-                                    <option value="Full Maintenance Package">Full Maintenance Package (All Services)</option>
-                                </select>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">City / Location</label>
+                                <input type="text" placeholder="e.g. Thousand Oaks" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-yellow focus:outline-none">
                             </div>
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Approx. Parking Stalls</label>
-                                <input type="number" id="calc-stalls" placeholder="e.g. 40" min="5" value="25" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Approx. Square Footage</label>
-                                <input type="number" id="calc-sqft" placeholder="e.g. 12000" min="500" value="8000" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                            </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Primary Service Needed</label>
+                            <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-yellow focus:outline-none">
+                                <option>Asphalt Sealcoating</option>
+                                <option>Parking Lot Line Striping</option>
+                                <option>Asphalt Repair & Patching</option>
+                                <option>ADA Compliance & Stenciling</option>
+                                <option>Crack Filling & Sealing</option>
+                                <option>Commercial Concrete Services</option>
+                            </select>
                         </div>
-
-                        <!-- Calculation Display Box -->
-                        <div class="bg-asphalt-900 border border-asphalt-700 rounded-xl p-4 flex items-center justify-between">
-                            <div>
-                                <span class="text-xs font-bold text-asphalt-300 uppercase block">Estimated Project Budget</span>
-                                <span id="calc-price-display" class="text-2xl font-black text-caution-500">$1,200 - $1,800</span>
-                            </div>
-                            <span class="text-xs text-asphalt-300 text-right">Rough estimate.<br>Final bid after site visit.</span>
-                        </div>
-
-                        <!-- Contact Details -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Your Name</label>
-                                <input type="text" required placeholder="John Doe" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-white uppercase mb-1">Phone Number</label>
-                                <input type="tel" required placeholder="(800) 555-PAVE" class="w-full bg-asphalt-900 border border-asphalt-700 rounded-lg p-3 text-white text-sm focus:border-caution-500 focus:outline-none">
-                            </div>
-                        </div>
-
-                        <button type="button" onclick="handleEstimateSubmit()" class="w-full bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-extrabold uppercase tracking-wide text-base py-4 rounded-xl shadow-lg transition-all">
-                            Submit For Official Site Inspection
+                        <button type="submit" class="w-full bg-brand-yellow text-brand-black hover:bg-brand-yellowDark font-extrabold py-3.5 rounded-lg shadow transition-all text-base uppercase tracking-wider">
+                            Submit Quote Request
                         </button>
-
                     </form>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- About Us Section -->
-<section id="about" class="py-20 bg-asphalt-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center space-y-4">
-            <span class="text-caution-500 font-extrabold text-sm uppercase tracking-widest block">The Doctor Is In</span>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase text-white">About The Pavement Doctor</h2>
-            <div class="w-20 h-1.5 bg-caution-500 mx-auto rounded-full"></div>
-            <p class="text-asphalt-300 leading-relaxed text-base pt-2">
-                Registered as <strong class="text-white">The Pavement Doctor</strong> with the State of California, we specialize in non-destructive pavement rejuvenation, ADA compliance modifications, and parking lot restriping. Operating across Los Angeles, Ventura, and Orange Counties, our mission is simple: keep commercial properties safe, compliant, and visually stunning while postponing expensive full asphalt repaving by decades.
-            </p>
-        </div>
-    </div>
-</section>
+    <!-- Core Services Section (Static HTML SEO Hub) -->
+    <section id="services" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-yellowDark font-extrabold uppercase tracking-widest text-sm">Comprehensive Asphalt Care</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-2 text-slate-900">Our Professional Paving Services</h2>
+                <p class="text-slate-600 mt-4">We provide specialized maintenance solutions designed to maximize the lifespan, safety, and visual appeal of your asphalt surfaces.</p>
+            </div>
 
-<!-- Footer -->
-<footer class="bg-asphalt-900 border-t border-asphalt-800 pt-16 pb-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-asphalt-800">
-            
-            <div class="space-y-4 md:col-span-1">
-                <a href="#home" class="flex items-center space-x-3">
-                    <div class="w-8 h-8 bg-caution-500 rounded flex items-center justify-center text-asphalt-900 font-black">
-                        <i class="fa-solid fa-road"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Asphalt Sealcoating</h3>
+                        <p class="text-slate-600 text-sm mb-4">Protect asphalt from UV damage, water intrusion, oil spills, and oxidation with high-grade commercial sealcoating mixtures.</p>
                     </div>
-                    <span class="text-lg font-black text-white uppercase">THE PAVEMENT <span class="text-caution-500">DOCTOR</span></span>
-                </a>
-                <p class="text-xs text-asphalt-300 leading-relaxed">
-                    CSLB Licensed Asphalt Contractor providing professional sealcoating, hot crack repair, and striping across Greater Los Angeles.
-                </p>
-            </div>
-
-            <div>
-                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Core Services</h4>
-                <ul class="text-xs space-y-2 text-asphalt-300">
-                    <li><a href="#services" class="hover:text-caution-500">Asphalt Sealcoating</a></li>
-                    <li><a href="#services" class="hover:text-caution-500">Hot Rubber Crack Repair</a></li>
-                    <li><a href="#services" class="hover:text-caution-500">Line Striping & Stenciling</a></li>
-                    <li><a href="#services" class="hover:text-caution-500">ADA Title 24 Compliance</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Service Regions</h4>
-                <ul class="text-xs space-y-2 text-asphalt-300">
-                    <li>Los Angeles & Pasadena</li>
-                    <li>Thousand Oaks & Oxnard</li>
-                    <li>Irvine & Newport Beach</li>
-                    <li>Long Beach & Santa Clarita</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Contact Info</h4>
-                <div class="text-xs text-asphalt-300 space-y-2">
-                    <p><i class="fa-solid fa-phone text-caution-500 mr-2"></i> (800) 555-PAVE</p>
-                    <p><i class="fa-solid fa-envelope text-caution-500 mr-2"></i> info@thepavementdr.com</p>
-                    <p><i class="fa-solid fa-globe text-caution-500 mr-2"></i> thepavementdr.com</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-asphalt-300">
-            <p>&copy; 2026 The Pavement Doctor. All Rights Reserved. Licensed California Contractor.</p>
-            <div class="flex space-x-6 mt-4 sm:mt-0">
-                <a href="#home" class="hover:text-caution-500">Privacy Policy</a>
-                <a href="#home" class="hover:text-caution-500">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Notification Toast Modal -->
-<div id="toast" class="fixed bottom-5 right-5 bg-caution-500 text-asphalt-900 font-extrabold px-6 py-4 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-32 opacity-0 z-50 flex items-center space-x-3">
-    <i class="fa-solid fa-circle-check text-xl"></i>
-    <span id="toast-message">Request Received! We will contact you shortly.</span>
-</div>
-
-<!-- JavaScript Logic -->
-<script>
-    // Mobile Navigation Toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
-
-    // Dynamic City Landing Page Renderer
-    function renderLocalPage() {
-        const city = document.getElementById('local-city-select').value;
-        const service = document.getElementById('local-service-select').value;
-        const box = document.getElementById('local-content-box');
-
-        let details = "";
-        if (service === "Sealcoating") {
-            details = `
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3 text-caution-500 font-bold text-xs uppercase tracking-wider">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>${city}, CA • Commercial Asphalt Sealcoating</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-white uppercase">${city} Asphalt Sealcoating Services</h3>
-                    <p class="text-sm text-asphalt-300 leading-relaxed">
-                        Protect your commercial property in <strong>${city}</strong> against UV degradation, oil leaks, and moisture penetration. Our heavy-duty mineral-filled asphalt emulsion extends pavement life by up to 300% while giving your parking lot a deep, rich jet-black finish.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Heavy-duty squeegee & spray application</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Oil spot priming & petro-chemical treatment</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Weekend & off-hours scheduling for ${city} commercial tenants</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Multi-year durability guarantee</div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="#quote" class="inline-block bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-black text-xs uppercase px-5 py-3 rounded-lg">
-                            Get Estimate for ${city} Location
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="asphalt-sealcoating.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About Sealcoating</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
-            `;
-        } else if (service === "Striping") {
-            details = `
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3 text-caution-500 font-bold text-xs uppercase tracking-wider">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>${city}, CA • Line Striping & Title 24 ADA Stenciling</span>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Parking Lot Line Striping</h3>
+                        <p class="text-slate-600 text-sm mb-4">Bright, crisp traffic markings, stencils, directional arrows, and parking space layout updates using heavy-duty paint.</p>
                     </div>
-                    <h3 class="text-2xl font-black text-white uppercase">${city} Line Striping & ADA Compliance</h3>
-                    <p class="text-sm text-asphalt-300 leading-relaxed">
-                        Ensure complete accessibility and safety compliance in <strong>${city}</strong>. We deliver precise parking stall line work, fire lane stenciling, directional arrows, and California Building Code (CBC) Title 24 compliant handicap stalls.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> California Title 24 & ADA handicap layout design</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> High-durability commercial traffic paint</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Fire lane red curbs and directional arrows</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> ${city} municipal compliance review</div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="#quote" class="inline-block bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-black text-xs uppercase px-5 py-3 rounded-lg">
-                            Schedule ${city} Striping Audit
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="parking-lot-striping.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About Striping</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
-            `;
-        } else {
-            details = `
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3 text-caution-500 font-bold text-xs uppercase tracking-wider">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>${city}, CA • Hot Rubber Crack Sealing</span>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Asphalt Repair & Patching</h3>
+                        <p class="text-slate-600 text-sm mb-4">Fix dangerous potholes, structural alligator cracking, and damaged areas with full-depth asphalt skin patching or replacement.</p>
                     </div>
-                    <h3 class="text-2xl font-black text-white uppercase">${city} Hot-Pour Crack Repair</h3>
-                    <p class="text-sm text-asphalt-300 leading-relaxed">
-                        Stop water intrusion before it destroys your subbase in <strong>${city}</strong>. We apply direct-fire rubberized joint sealant heated to 375°F that expands and contracts with local Southern California temperature shifts to block cracks completely.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-white">
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> High-pressure air cleaning prior to application</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Commercial grade hot rubber sealant</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Prevents costly pothole formations</div>
-                        <div class="flex items-center"><i class="fa-solid fa-check text-caution-500 mr-2"></i> Ready for traffic within minutes</div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="#quote" class="inline-block bg-caution-500 hover:bg-caution-400 text-asphalt-900 font-black text-xs uppercase px-5 py-3 rounded-lg">
-                            Request ${city} Crack Inspection
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="asphalt-repair.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About Repair</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
-            `;
-        }
 
-        box.innerHTML = details;
-    }
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-wheelchair"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">ADA Compliance Services</h3>
+                        <p class="text-slate-600 text-sm mb-4">Ensure legal handicap access with compliant stall dimensions, handicap stencils, path of travel markers, and truncating domes.</p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="ada-compliance.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About ADA</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
 
-    // Initial rendering of local content
-    renderLocalPage();
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-grip-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Rubberized Crack Filling</h3>
+                        <p class="text-slate-600 text-sm mb-4">Prevent water penetration and foundation degradation with hot-applied rubberized joint sealants before applying sealcoat.</p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="crack-filling.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About Crack Sealing</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
 
-    // Interactive Price Estimator Logic
-    const stallsInput = document.getElementById('calc-stalls');
-    const sqftInput = document.getElementById('calc-sqft');
-    const serviceSelect = document.getElementById('calc-service');
-    const priceDisplay = document.getElementById('calc-price-display');
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+                    <div class="p-6 flex-1">
+                        <div class="w-12 h-12 bg-yellow-100 text-brand-black rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-brand-yellow transition-colors">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Commercial Concrete</h3>
+                        <p class="text-slate-600 text-sm mb-4">Complete concrete repair, curb restoration, gutters, sidewalks, and parking bumpers integrated with asphalt paving.</p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100">
+                        <a href="concrete-services.html" class="text-brand-black font-bold text-sm inline-flex items-center space-x-2 hover:text-brand-yellowDark">
+                            <span>Learn More About Concrete</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function updateEstimate() {
-        const sqft = parseFloat(sqftInput.value) || 0;
-        const stalls = parseFloat(stallsInput.value) || 0;
-        const service = serviceSelect.value;
+    <!-- Regional & City Direct Link Index (Static SEO Landing Directory) -->
+    <section id="locations" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-yellowDark font-extrabold uppercase tracking-widest text-sm">Local Service Coverage</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-2 text-slate-900">Cities We Proudly Serve</h2>
+                <p class="text-slate-600 mt-4">Select your city below to view dedicated local services, past project examples, and regional commercial paving information.</p>
+            </div>
 
-        let ratePerSqft = 0.15;
-        if (service.includes('Crack Repair Only')) ratePerSqft = 0.08;
-        if (service.includes('Line Striping & ADA')) ratePerSqft = 0.10;
-        if (service.includes('Full Maintenance')) ratePerSqft = 0.22;
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Ventura County Column -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-200">
+                        <i class="fa-solid fa-map-location-dot text-brand-yellowDark text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900">Ventura County</h3>
+                    </div>
+                    <ul class="space-y-3 font-medium text-slate-700 text-sm">
+                        <li>
+                            <a href="thousand-oaks-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Thousand Oaks Asphalt Services</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="simi-valley-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Simi Valley Asphalt & Striping</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="oxnard-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Oxnard Commercial Paving</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ventura-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Ventura Line Striping & Repair</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="camarillo-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Camarillo Parking Maintenance</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-        let baseCost = (sqft * ratePerSqft) + (stalls * 12);
-        if (baseCost < 450) baseCost = 450;
+                <!-- Los Angeles County Column -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-200">
+                        <i class="fa-solid fa-city text-brand-yellowDark text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900">Los Angeles County</h3>
+                    </div>
+                    <ul class="space-y-3 font-medium text-slate-700 text-sm">
+                        <li>
+                            <a href="los-angeles-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Los Angeles Commercial Paving</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pasadena-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Pasadena Asphalt & Line Striping</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="glendale-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Glendale Parking Lot Maintenance</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="santa-monica-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Santa Monica Sealcoating</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="torrance-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Torrance Asphalt Patching & Repair</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-        const minEstimate = Math.round(baseCost * 0.9);
-        const maxEstimate = Math.round(baseCost * 1.25);
+                <!-- Orange County Column -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-200">
+                        <i class="fa-solid fa-building text-brand-yellowDark text-2xl"></i>
+                        <h3 class="text-xl font-bold text-slate-900">Orange County</h3>
+                    </div>
+                    <ul class="space-y-3 font-medium text-slate-700 text-sm">
+                        <li>
+                            <a href="irvine-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Irvine Commercial Parking Lots</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="anaheim-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Anaheim Asphalt Repair & Striping</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="santa-ana-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Santa Ana Sealcoating Services</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="huntington-beach-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Huntington Beach Paving</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="newport-beach-asphalt-sealcoating.html" class="hover:text-brand-yellowDark hover:underline flex items-center justify-between">
+                                <span>Newport Beach ADA Compliance</span>
+                                <i class="fa-solid fa-angle-right text-slate-400 text-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-        priceDisplay.textContent = `$${minEstimate.toLocaleString()} - $${maxEstimate.toLocaleString()}`;
-    }
+            </div>
+        </div>
+    </section>
 
-    stallsInput.addEventListener('input', updateEstimate);
-    sqftInput.addEventListener('input', updateEstimate);
-    serviceSelect.addEventListener('change', updateEstimate);
+    <!-- Why Choose Us -->
+    <section id="about" class="py-20 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-yellow font-extrabold uppercase tracking-widest text-sm">Why Property Managers Trust Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-6">Engineered for Quality, Safety & Long-Term Durability</h2>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        At The Pavement Doctor, we understand that parking lots and asphalt roadways are major assets for commercial property owners, HOA boards, and facility managers. Poorly maintained pavement not only decreases property value but also creates significant liability risks.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-yellow text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Commercial-Grade Materials</h4>
+                                <p class="text-slate-400 text-sm">We use heavy-duty mineral-filled sealers and high-traffic acrylic layout paint built for California weather.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-yellow text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Minimal Downtime & Phased Scheduling</h4>
+                                <p class="text-slate-400 text-sm">We schedule work during off-hours, weekends, or in phased sections to keep your business open.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-brand-yellow text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Full ADA Code Compliance</h4>
+                                <p class="text-slate-400 text-sm">Our team stays up to date with California Title 24 accessibility requirements to keep your lot safe and legal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-800 p-8 rounded-2xl border border-neutral-700">
+                    <div class="text-center space-y-6">
+                        <div class="text-brand-yellow text-5xl font-black">20+</div>
+                        <div class="text-xl font-bold uppercase tracking-wider">Years Serving Southern California</div>
+                        <p class="text-slate-400 text-sm">Hundreds of thousands of square feet paved, sealed, and striped across commercial centers, industrial parks, and HOA communities.</p>
+                        <div class="pt-4">
+                            <a href="#quote" class="inline-block bg-brand-yellow text-brand-black hover:bg-brand-yellowDark font-extrabold px-8 py-3.5 rounded-lg shadow transition-all">
+                                Get Your Free Site Inspection
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // Toast Alert Trigger
-    function handleEstimateSubmit() {
-        const toast = document.getElementById('toast');
-        toast.classList.remove('translate-y-32', 'opacity-0');
-        
-        setTimeout(() => {
-            toast.classList.add('translate-y-32', 'opacity-0');
-        }, 4000);
-    }
-</script>
+    <!-- Footer -->
+    <footer id="contact" class="bg-neutral-950 text-slate-400 py-16 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-brand-yellow text-brand-black p-2 rounded">
+                            <i class="fa-solid fa-road text-xl"></i>
+                        </div>
+                        <span class="text-xl font-black text-white">THE PAVEMENT DOCTOR</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Southern California’s premier partner for commercial and industrial asphalt maintenance, sealcoating, line striping, and parking lot repair.
+                    </p>
+                </div>
+
+                <!-- Fast Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Asphalt Sealcoating</a></li>
+                        <li><a href="parking-lot-striping.html" class="hover:text-brand-yellow transition-colors">Line Striping & Marking</a></li>
+                        <li><a href="asphalt-repair.html" class="hover:text-brand-yellow transition-colors">Pothole & Asphalt Repair</a></li>
+                        <li><a href="ada-compliance.html" class="hover:text-brand-yellow transition-colors">ADA Compliance</a></li>
+                        <li><a href="crack-filling.html" class="hover:text-brand-yellow transition-colors">Crack Filling</a></li>
+                        <li><a href="concrete-services.html" class="hover:text-brand-yellow transition-colors">Commercial Concrete</a></li>
+                    </ul>
+                </div>
+
+                <!-- Top Areas -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Key Regions</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="thousand-oaks-asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Thousand Oaks & Conejo Valley</a></li>
+                        <li><a href="los-angeles-asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Greater Los Angeles</a></li>
+                        <li><a href="irvine-asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Orange County & Irvine</a></li>
+                        <li><a href="simi-valley-asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Simi Valley</a></li>
+                        <li><a href="pasadena-asphalt-sealcoating.html" class="hover:text-brand-yellow transition-colors">Pasadena & San Gabriel Valley</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i>
+                            <span>(800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>info@thepavementdr.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-location-dot text-brand-yellow"></i>
+                            <span>Serving LA, Ventura, and Orange Counties</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 The Pavement Doctor. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                    <a href="#locations" class="hover:text-slate-400">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
